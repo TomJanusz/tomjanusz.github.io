@@ -10,17 +10,21 @@
     <!-- Google Fonts pour la vibe Tech -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@300;400;600;800&display=swap"
+        rel="stylesheet">
+
     <style>
         :root {
-        --bg-dark: #0d0e12;
-        --bg-card: #161920;
-        --accent-neon: #00ff66;
-        --accent-glow: rgba(0, 255, 102, 0.15);
-        --text-main: #ffffff;        /* Blanc pur pour les titres et textes importants */
-        --text-muted: #f6f6f6;       /* Gris très clair (Ardoise 300) pour une lisibilité parfaite */
-    }
+            --bg-dark: #0d0e12;
+            --bg-card: #161920;
+            --accent-neon: #00ff66;
+            --accent-glow: rgba(0, 255, 102, 0.15);
+            --text-main: #ffffff;
+            /* Blanc pur pour les titres et textes importants */
+            --text-muted: #f6f6f6;
+            /* Gris très clair (Ardoise 300) pour une lisibilité parfaite */
+        }
 
         body {
             background-color: var(--bg-dark);
@@ -39,9 +43,12 @@
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(10px);
         }
-        .navbar-brand, .nav-link {
+
+        .navbar-brand,
+        .nav-link {
             color: var(--text-main) !important;
         }
+
         .nav-link:hover {
             color: var(--accent-neon) !important;
         }
@@ -64,6 +71,7 @@
             border-radius: 12px;
             transition: all 0.3s ease;
         }
+
         .cyber-card:hover {
             transform: translateY(-5px);
             border-color: var(--accent-neon);
@@ -78,6 +86,7 @@
             font-family: 'Fira Code', monospace;
             transition: all 0.3s ease;
         }
+
         .btn-neon:hover {
             background: var(--accent-neon);
             color: var(--bg-dark);
@@ -90,10 +99,12 @@
             padding-left: 20px;
             position: relative;
         }
+
         .timeline-item {
             position: relative;
             margin-bottom: 25px;
         }
+
         .timeline-item::before {
             content: "";
             position: absolute;
@@ -112,6 +123,7 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
             color: var(--text-main);
         }
+
         .form-control:focus {
             background-color: rgba(255, 255, 255, 0.05);
             border-color: var(--accent-neon);
@@ -129,6 +141,63 @@
             display: inline-block;
             margin: 4px;
         }
+
+        /* Conteneur de l'effet écran vert */
+        .matrix-monitor {
+            position: relative;
+            overflow: hidden;
+            border: 2px solid var(--accent-neon) !important;
+            /* Bordure verte */
+            box-shadow: 0 0 20px var(--accent-glow) !important;
+            /* Lueur verte */
+        }
+
+        /* Application du filtre de couleur Matrix */
+        .matrix-monitor img {
+            filter: brightness(0.8) contrast(1.5) saturate(1.8) sepia(1) hue-rotate(85deg);
+        }
+
+        /* Lignes de balayage de l'écran (Scanlines) */
+        .matrix-monitor::after {
+            content: " ";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.4) 50%);
+            background-size: 100% 4px;
+            /* Rapproche ou éloigne les lignes */
+            pointer-events: none;
+            /* Laisse l'image cliquable si besoin */
+            z-index: 2;
+        }
+
+        /* Animation d'un léger balayage lumineux (Optionnel mais ultra stylé) */
+        .matrix-monitor::before {
+            content: " ";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0, 255, 102, 0) 0%, rgba(0, 255, 102, 0.08) 10%, rgba(0, 255, 102, 0) 20%);
+            animation: scanline-move 6s linear infinite;
+            z-index: 3;
+            pointer-events: none;
+        }
+
+        @keyframes scanline-move {
+            0% {
+                transform: translateY(-100%);
+            }
+
+            100% {
+                transform: translateY(100%);
+            }
+        }
     </style>
 </head>
 
@@ -140,7 +209,8 @@
                 <a class="navbar-brand font-tech fw-bold text-uppercase" href="#">
                     <span style="color: var(--accent-neon);">&gt;</span> TomJanusz
                 </a>
-                <button class="navbar-toggler navbar-dark border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+                <button class="navbar-toggler navbar-dark border-0" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navMenu">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse justify-content-end" id="navMenu">
@@ -150,7 +220,8 @@
                         <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>
                         <li class="nav-item"><a class="nav-link" href="#certifications">Certifications</a></li>
                         <li class="nav-item"><a class="nav-link" href="#projets">Projets</a></li>
-                        <li class="nav-item"><a class="nav-link btn btn-neon ms-lg-3 px-3" href="#contact">_contact</a></li>
+                        <li class="nav-item"><a class="nav-link btn btn-neon ms-lg-3 px-3" href="#contact">_contact</a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -162,23 +233,30 @@
         <section id="about-me" class="container mb-5 py-4">
             <div class="row align-items-center g-5">
                 <div class="col-12 col-md-5 text-center text-md-start">
-                    <!-- Image optimisée avec effet de bordure -->
-                    <div class="position-relative d-inline-block">
-                        <img src="./img/placeholder-chat.webp" class="img-fluid rounded-4 shadow-lg" style="border: 1px solid rgba(255,255,255,0.1); max-height: 350px;" alt="Tomasz Januszewski">
+                    <!-- Image encapsulée dans le moniteur Matrix -->
+                    <div class="position-relative d-inline-block matrix-monitor rounded-4">
+                        <img src="./img/placeholder-chat.webp" class="img-fluid"
+                            style="max-height: 350px; display: block;" alt="Tomasz Januszewski">
                     </div>
                 </div>
                 <div class="col-12 col-md-7">
                     <span class="hero-badge font-tech mb-3">Available for Work</span>
                     <h1 class="fw-extrabold display-4 mb-2">Tomasz Januszewski</h1>
-                    <h2 class="h4 text-muted font-tech mb-4" style="color: var(--accent-neon) !important;">&gt; Chef de Projet / DevOps / RPA</h2>
-                    
+                    <h2 class="h4 text-muted font-tech mb-4" style="color: var(--accent-neon) !important;">&gt; Chef de
+                        Projet / DevOps / RPA</h2>
+
                     <p class="text-secondary">
-                        Actuellement en Master MAALSI en alternance à la MAIF, je combine des compétences en conception d'applications robustes, industrialisation d'infrastructures (DevOps) et automatisation intelligente des processus (RPA).
+                        Actuellement en Master MAALSI en alternance à la MAIF, je combine des compétences en conception
+                        d'applications robustes, industrialisation d'infrastructures (DevOps) et automatisation
+                        intelligente des processus (RPA).
                     </p>
-                    
-                    <div class="p-3 rounded-3 mt-4" style="background: rgba(255,255,255,0.02); border-left: 3px solid var(--accent-neon);">
+
+                    <div class="p-3 rounded-3 mt-4"
+                        style="background: rgba(255,255,255,0.02); border-left: 3px solid var(--accent-neon);">
                         <p class="mb-1 font-tech fw-bold text-white">🎯 Objectif : Thèse CIFRE</p>
-                        <small class="text-muted">Axe de recherche : Automatisation, Architecture Infra & Logiciel, DevOps et Machine Learning. <br><span class="text-warning">Laboratoire & Entreprise : En cours de recherche.</span></small>
+                        <small class="text-muted">Axe de recherche : Automatisation, Architecture Infra & Logiciel,
+                            DevOps et Machine Learning. <br><span class="text-warning">Laboratoire & Entreprise : En
+                                cours de recherche.</span></small>
                     </div>
                 </div>
             </div>
@@ -193,25 +271,30 @@
                         <div class="timeline-item">
                             <span class="text-secondary small font-tech">2024 - 2026</span>
                             <h4 class="h5 mt-1">Master MAALSI</h4>
-                            <p class="mb-0 text-secondary">Manager en Architecture et Application Logiciel des Systèmes d'Informations</p>
-                            <small class="text-secondary font-tech">CESI École d'Ingénieurs (Lagord) | Alternance : Développeur RPA & Assistant PO @ MAIF (Niort)</small>
+                            <p class="mb-0 text-secondary">Manager en Architecture et Application Logiciel des Systèmes
+                                d'Informations</p>
+                            <small class="text-secondary font-tech">CESI École d'Ingénieurs (Lagord) | Alternance :
+                                Développeur RPA & Assistant PO @ MAIF (Niort)</small>
                         </div>
                         <div class="timeline-item">
                             <span class="text-secondary small font-tech">2023 - 2024</span>
                             <h4 class="h5 mt-1">Bachelor CDA</h4>
                             <p class="mb-0 text-secondary">Concepteur Développeur d'Application</p>
-                            <small class="text-secondary font-tech">CESI École d'Ingénieurs | Alternance : Développeur Web @ Pluscom (Aytré)</small>
+                            <small class="text-secondary font-tech">CESI École d'Ingénieurs | Alternance : Développeur
+                                Web @ Pluscom (Aytré)</small>
                         </div>
                         <div class="timeline-item">
                             <span class="text-secondary small font-tech">2021 - 2023</span>
                             <h4 class="h5 mt-1">DUT MMI</h4>
-                            <p class="mb-0 text-secondary">Métiers du Multimédia et de l'Internet — Option Développement Web</p>
+                            <p class="mb-0 text-secondary">Métiers du Multimédia et de l'Internet — Option Développement
+                                Web</p>
                             <small class="text-secondary font-tech">IUT de Limoges</small>
                         </div>
                         <div class="timeline-item">
                             <span class="text-secondary small font-tech">2020</span>
                             <h4 class="h5 mt-1 ">Licence PCAME (Interrompue)</h4>
-                            <p class="mb-0 text-secondary">Physique Chimie Astrophysique Météorologie et Énergie (Tarbes)</p>
+                            <p class="mb-0 text-secondary">Physique Chimie Astrophysique Météorologie et Énergie
+                                (Tarbes)</p>
                         </div>
                         <div class="timeline-item">
                             <span class="text-secondary small font-tech">Avant 2020</span>
@@ -256,7 +339,8 @@
                     <div class="cyber-card p-4 h-100">
                         <h4 class="h5 font-tech text-white mb-3">🤖 Automation & Cloud</h4>
                         <div class="d-flex flex-wrap">
-                            <span class="skill-tag font-weight-bold" style="color: var(--accent-neon)">UiPath (RPA)</span>
+                            <span class="skill-tag font-weight-bold" style="color: var(--accent-neon)">UiPath
+                                (RPA)</span>
                             <span class="skill-tag">AWS Cloud</span><span class="skill-tag">Python Scripting</span>
                             <span class="skill-tag">Bash</span><span class="skill-tag">Go Language</span>
                         </div>
@@ -283,7 +367,8 @@
                     <div class="card cyber-card h-100 text-white">
                         <div class="card-body p-4">
                             <h5 class="card-title font-tech">Article 1 : Self_Employed Game Dev</h5>
-                            <p class="card-text text-secondary">Creating video games as a self-employed game developer with no experience.</p>
+                            <p class="card-text text-secondary">Creating video games as a self-employed game developer
+                                with no experience.</p>
                             <a href="#" class="btn btn-neon btn-sm mt-3">Lire l'article //</a>
                         </div>
                     </div>
@@ -309,9 +394,12 @@
                         <div class="card-body p-4 d-flex flex-column justify-content-between">
                             <div>
                                 <h5 class="card-title font-tech mb-2">AWS Certified Solutions Architect</h5>
-                                <p class="card-text text-secondary">Conception et déploiement d'applications robustes et sécurisées sur les technologies AWS.</p>
+                                <p class="card-text text-secondary">Conception et déploiement d'applications robustes et
+                                    sécurisées sur les technologies AWS.</p>
                             </div>
-                            <span class="badge align-self-start mt-3" style="background: rgba(255, 193, 7, 0.1); color: #ffc107; border: 1px solid #ffc107;">[ EN COURS ]</span>
+                            <span class="badge align-self-start mt-3"
+                                style="background: rgba(255, 193, 7, 0.1); color: #ffc107; border: 1px solid #ffc107;">[
+                                EN COURS ]</span>
                         </div>
                     </div>
                 </div>
@@ -320,9 +408,12 @@
                         <div class="card-body p-4 d-flex flex-column justify-content-between">
                             <div>
                                 <h5 class="nav-brand font-tech mb-2">Microsoft Azure Fundamentals (AZ-900)</h5>
-                                <p class="card-text text-secondary">Validation des connaissances de base des concepts cloud et des services de l'écosystème Azure.</p>
+                                <p class="card-text text-secondary">Validation des connaissances de base des concepts
+                                    cloud et des services de l'écosystème Azure.</p>
                             </div>
-                            <span class="badge align-self-start mt-3" style="background: rgba(255, 193, 7, 0.1); color: #ffc107; border: 1px solid #ffc107;">[ EN COURS ]</span>
+                            <span class="badge align-self-start mt-3"
+                                style="background: rgba(255, 193, 7, 0.1); color: #ffc107; border: 1px solid #ffc107;">[
+                                EN COURS ]</span>
                         </div>
                     </div>
                 </div>
@@ -356,54 +447,61 @@
 
         <!-- Contact Formulaire -->
         <section id="contact" class="container my-5 py-5">
-    <div class="row justify-content-center">
-        <div class="col-lg-7 text-center mb-5">
-            <h2 class="font-tech text-uppercase"><span class="text-success">&gt;</span> Etablir_Connexion</h2>
-            <p class="text-muted">Envie de discuter d'une opportunité : d'architecture ou de DevOps ? Choisissez un canal.</p>
-        </div>
-        <div class="col-md-10 col-lg-8">
-            <div class="cyber-card p-4 p-sm-5">
-                <div class="row g-4 text-center">
-                    
-                    <!-- Colonne 1 : Télécharger le CV (Le point central) -->
-                    <div class="col-12 col-sm-6">
-                        <div class="p-4 rounded-3 h-100" style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255,255,255,0.05)">
-                            <div class="fs-2 mb-2">📄</div>
-                            <h4 class="h5 font-tech text-white">Curriculum Vitae</h4>
-                            <p class="small text-muted mb-4">Consulter ou archiver mon profil complet au format PDF standardisé.</p>
-                            <!-- Remplace 'mon-cv.pdf' par le nom de ton fichier présent sur ton dépôt GitHub -->
-                            <a href="./files/CV_TomaszJanuszewski_SRE.pdf" target="_blank" class="btn btn-neon w-100 py-2">DOWNLOAD_CV.PDF</a>
-                        </div>
-                    </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-7 text-center mb-5">
+                    <h2 class="font-tech text-uppercase"><span class="text-success">&gt;</span> Etablir_Connexion</h2>
+                    <p class="text-muted">Envie de discuter d'une opportunité : d'architecture ou de DevOps ? Choisissez
+                        un canal.</p>
+                </div>
+                <div class="col-md-10 col-lg-8">
+                    <div class="cyber-card p-4 p-sm-5">
+                        <div class="row g-4 text-center">
 
-                    <!-- Colonne 2 : Liens de contact direct -->
-                    <div class="col-12 col-sm-6">
-                        <div class="p-4 rounded-3 h-100 d-flex flex-column justify-content-between" style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255,255,255,0.05)">
-                            
-                            <!-- Lien Email Direct -->
-                            <div class="mb-3 text-start">
-                                <label class="font-tech small text-muted d-block mb-1">// EMAIL_DIRECT</label>
-                                <a href="mailto:tom.janusz24800@gmail.com" class="font-tech text-decoration-none" style="color: var(--accent-neon);">
-                                    tom.janusz24800@gmail.com
-                                </a>
+                            <!-- Colonne 1 : Télécharger le CV (Le point central) -->
+                            <div class="col-12 col-sm-6">
+                                <div class="p-4 rounded-3 h-100"
+                                    style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255,255,255,0.05)">
+                                    <div class="fs-2 mb-2">📄</div>
+                                    <h4 class="h5 font-tech text-white">Curriculum Vitae</h4>
+                                    <p class="small text-muted mb-4">Consulter ou archiver mon profil complet au format
+                                        PDF standardisé.</p>
+                                    <!-- Remplace 'mon-cv.pdf' par le nom de ton fichier présent sur ton dépôt GitHub -->
+                                    <a href="./files/CV_TomaszJanuszewski_SRE.pdf" target="_blank"
+                                        class="btn btn-neon w-100 py-2">DOWNLOAD_CV.PDF</a>
+                                </div>
                             </div>
 
-                            <!-- Lien LinkedIn -->
-                            <div class="text-start">
-                                <label class="font-tech small text-muted d-block mb-1">// RESEAU_PRO</label>
-                                <a href="https://www.linkedin.com/in/tomasz-p-januszewski/" target="_blank" class="font-tech text-white text-decoration-none">
-                                    linkedin.com/in/tomasz-januszewski
-                                </a>
+                            <!-- Colonne 2 : Liens de contact direct -->
+                            <div class="col-12 col-sm-6">
+                                <div class="p-4 rounded-3 h-100 d-flex flex-column justify-content-between"
+                                    style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255,255,255,0.05)">
+
+                                    <!-- Lien Email Direct -->
+                                    <div class="mb-3 text-start">
+                                        <label class="font-tech small text-muted d-block mb-1">// EMAIL_DIRECT</label>
+                                        <a href="mailto:tom.janusz24800@gmail.com"
+                                            class="font-tech text-decoration-none" style="color: var(--accent-neon);">
+                                            tom.janusz24800@gmail.com
+                                        </a>
+                                    </div>
+
+                                    <!-- Lien LinkedIn -->
+                                    <div class="text-start">
+                                        <label class="font-tech small text-muted d-block mb-1">// RESEAU_PRO</label>
+                                        <a href="https://www.linkedin.com/in/tomasz-p-januszewski/" target="_blank"
+                                            class="font-tech text-white text-decoration-none">
+                                            linkedin.com/in/tomasz-januszewski
+                                        </a>
+                                    </div>
+
+                                </div>
                             </div>
 
                         </div>
                     </div>
-
                 </div>
             </div>
-        </div>
-    </div>
-</section>
+        </section>
     </main>
 
     <footer class="text-center py-4 border-top border-secondary border-opacity-10 font-tech text-muted small">
