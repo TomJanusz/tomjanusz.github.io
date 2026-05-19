@@ -356,32 +356,62 @@
 
         <!-- Contact Formulaire -->
         <section id="contact" class="container my-5 py-5">
-            <div class="row justify-content-center">
-                <div class="col-lg-7 text-center mb-4">
-                    <h2 class="font-tech text-uppercase"><span class="text-success">&gt;</span> Initialiser_Contact</h2>
-                    <p class="text-muted">Une opportunité de thèse CIFRE, une question ou une collab ? Laisse un message.</p>
-                </div>
-                <div class="col-md-8 col-lg-6">
-                    <div class="cyber-card p-4 p-sm-5">
-                        <form action="https://formsubmit.co/tom.janusz24800@gmail.com" method="POST">
-                            <div class="mb-3">
-                                <label for="name" class="form-label font-tech small">_Nom_Complet</label>
-                                <input type="text" name="name" class="form-control form-control-lg fs-6" id="name" required placeholder="John Doe">
-                            </div>
-                            <div class="mb-3">
-                                <label for="email" class="form-label font-tech small">_Adresse_Email</label>
-                                <input type="email" name="email" class="form-control form-control-lg fs-6" id="email" required placeholder="john@example.com">
-                            </div>
-                            <div class="mb-4">
-                                <label for="message" class="form-label font-tech small">_Message</label>
-                                <textarea name="message" class="form-control" id="message" rows="4" required placeholder="Tape ton message ici..."></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-neon w-100 py-2">EXECUTE_SEND</button>
-                        </form>
+    <div class="row justify-content-center">
+        <div class="col-lg-7 text-center mb-5">
+            <h2 class="font-tech text-uppercase"><span class="text-success">&gt;</span> Etablir_Connexion</h2>
+            <p class="text-muted">Envie de discuter d'une opportunité de thèse CIFRE, d'architecture ou de DevOps ? Choisissez un canal.</p>
+        </div>
+        <div class="col-md-10 col-lg-8">
+            <div class="cyber-card p-4 p-sm-5">
+                <div class="row g-4 text-center">
+                    
+                    <!-- Colonne 1 : Télécharger le CV (Le point central) -->
+                    <div class="col-12 col-sm-6">
+                        <div class="p-4 rounded-3 h-100" style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255,255,255,0.05)">
+                            <div class="fs-2 mb-2">📄</div>
+                            <h4 class="h5 font-tech text-white">Curriculum Vitae</h4>
+                            <p class="small text-muted mb-4">Consulter ou archiver mon profil complet au format PDF standardisé.</p>
+                            <!-- Remplace 'mon-cv.pdf' par le nom de ton fichier présent sur ton dépôt GitHub -->
+                            <a href="./mon-cv.pdf" target="_blank" class="btn btn-neon w-100 py-2">DOWNLOAD_CV.EXE</a>
+                        </div>
                     </div>
+
+                    <!-- Colonne 2 : Liens de contact direct -->
+                    <div class="col-12 col-sm-6">
+                        <div class="p-4 rounded-3 h-100 d-flex flex-column justify-content-between" style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255,255,255,0.05)">
+                            
+                            <!-- Lien Email Direct -->
+                            <div class="mb-3 text-start">
+                                <label class="font-tech small text-muted d-block mb-1">// EMAIL_DIRECT</label>
+                                <a href="mailto:tom.janusz24800@gmail.com" class="font-tech text-decoration-none" style="color: var(--accent-neon);">
+                                    tom.janusz24800@gmail.com
+                                </a>
+                            </div>
+
+                            <!-- Lien GitHub -->
+                            <div class="mb-3 text-start">
+                                <label class="font-tech small text-muted d-block mb-1">// DEPOT_SOURCE</label>
+                                <a href="https://github.com/votre-pseudo-github" target="_blank" class="font-tech text-white text-decoration-none">
+                                    github.com/TomJanusz
+                                </a>
+                            </div>
+
+                            <!-- Lien LinkedIn -->
+                            <div class="text-start">
+                                <label class="font-tech small text-muted d-block mb-1">// RESEAU_PRO</label>
+                                <a href="https://linkedin.com/in/votre-nom" target="_blank" class="font-tech text-white text-decoration-none">
+                                    linkedin.com/in/tomasz-januszewski
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+
                 </div>
             </div>
-        </section>
+        </div>
+    </div>
+</section>
     </main>
 
     <footer class="text-center py-4 border-top border-secondary border-opacity-10 font-tech text-muted small">
